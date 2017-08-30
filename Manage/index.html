@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Manage</title>
+    <link rel="stylesheet" href="style.css">
+    <!--Google font-->
+    <link href='https://fonts.googleapis.com/css?family=Quattrocento Sans' rel='stylesheet'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!--Firebase connection-->
+    <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase-database.js"></script>
+  </head>
+  <body>
+
+    <div class="main_whole_page container">
+
+      <nav class="top" data-no-scroll="1">
+        <ul>
+          <li><a href="#">Features</a></li>
+          <li><a href="#">Services</a></li>
+        </ul>
+      </nav>
+
+
+      <div class="signup_container">
+        <div class="signup_layout">
+           <!--sign up div-->
+            <div id="show_signup_div" class="main_app_inputs">
+              <div class="app_logo_div">
+                <img class="logo_img" src="" alt="" width="90px" height="90px">
+              </div>
+              <h1 class="app_name">Manage</h1>
+              <div class="sigup_with_manage">Sign up with Manage to get started.</div>
+              <div class="signup_container">
+                <div class="signup_email_pass">
+                  <form id="signup_form_content"action="#">
+                    <div id="signup_form">
+                      <input type="text" class="inputtext add_email_pass_username" id="signup_username" placeholder="Username"  tabindex="1">
+                      <input type="text" class="inputtext add_email_pass_username" id="signup_email" placeholder="Email address" tabindex="2">
+                      <input type="password" class="inputtext add_email_pass_username"  id="signup_pass"  placeholder="Password" tabindex="3">
+                      <button value="1" class="signup_button" id="signupButton" tabindex="4" type="submit">Sign up</button>
+                      <div class="keep_me_signin_div">
+                        <div class="keep_me_signin_text clearfix">
+                          <label class="keep_me_sign_text_input"><input type="checkbox" value="1" name="persistent" tabindex="1" id="u_0_0"></label>
+                          <label for="u_0_0" class="uiInputLabelLabel">Keep me signed in</label>
+                        </div>
+                      </div>
+                      <div class="already_signin_div">
+                        <div class="already_sign_text clearfix">
+                          <label class="already_signin_label">Have an account?</label>
+                          <a id="go_for_login" href="#">Log in</a>
+                        </div>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+
+          <!--sign in div-->
+          <div id="show_signin_div" class="main_app_inputs_signin">
+            <div class="app_logo_div">
+                <img class="logo_img" src="" alt="" width="90px" height="90px">
+            </div>
+            <h1 class="app_name_signin">Manage</h1>
+            <div class="signup_container">
+              <div class="signin_email_pass">
+                <form id="signin_form_content"action="#">
+                  <div id="signup_form">
+                    <input type="text" class="inputtext add_email_pass_username" id="signin_email" placeholder="Email address" tabindex="2">
+                    <input type="password" class="inputtext add_email_pass_username"  id="signin_pass"  placeholder="Password" tabindex="3">
+                    <button value="1" class="signup_button" id="signinButton" tabindex="4" type="submit">Sign in</button>
+                    <div class="already_signin_div">
+                      <div class="already_sign_text clearfix">
+                        <label class="already_signin_label">Don't have an account?</label>
+                        <a id="go_for_signup" href="#">Sign up</a>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+
+            <div class="main_app_image">
+              <div class="app_releted_img">
+                <img class="img" src="https://static.xx.fbcdn.net/rsrc.php/v3/yc/r/xFmW1tcxsyL.png" alt="App info image" width="944" height="570">
+              </div>
+            </div>
+        </div>
+      </div>
+
+    <div class="ui_section  ui_introduction">
+      <div class="intro_container"><!--container-->
+        <div class="intro_div"><!--dblcol-->
+          <div class="intro_image" style="position: relative; height: 550px; width: 350px;">
+            <img class="img" src="https://scontent.fbom14-1.fna.fbcdn.net/v/t39.2365-6/11057106_628362803932627_1441447897_n.png?oh=718d86dda85c2362bdd2a08c63e8306c&amp;oe=5A299957" alt="" style="position: absolute; bottom: 0; right: 0; max-width: 662px !important; width: 662px !important; height: 615px !important;">
+          </div>
+          <div class="intro_text">
+            <h1 class="white intro_manage_white_text">Introducing Manage to you.</h1>
+            <div class="intro_manage_white_subtext">
+              A new way to manage your workspace and collaborate with others.
+            </div>
+            <a class="button featureslink" href="#" style="background-color: #6d999b; margin-top: 8px;">Watch the tour</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  <div class="feature_section_container sayanything">
+    <div class="section_container" style="display:block">
+
+      <div class="heroText2 text_center">
+        <h1 class="feature_center_text">Check out all you can do in Manage.</h1>
+      </div>
+
+      <div class="feature_div_shadow">
+
+        <div class="feature_section" id="texts">
+          <div class="feature_container">
+            <div class="first_feature_text">
+              <h1>Chat with collaborators.</h1>
+              <div class="feature_info sub_text">Reach people instantly. You’ll see when your message is delivered to your friend’s phone, plus when they’ve seen it. This way, you can be sure your messages are going through like they’re supposed to.
+              </div>
+            </div>
+            <div class="first_feature_img">
+              <div>
+                <img class="first_img" src="https://scontent.fbom14-1.fna.fbcdn.net/v/t39.2365-6/11057186_808627832564368_562834945_n.png?oh=64d0de4c35b267d7fd00481698f10af9&amp;oe=5A346742" alt="" style="max-width: 354px !important;">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="feature_section" id="texts">
+          <div class="feature_container">
+            <div class="second_feature_img">
+              <div>
+                <img class="second_img" src="https://scontent.fbom14-1.fna.fbcdn.net/v/t39.2365-6/11057186_808627832564368_562834945_n.png?oh=64d0de4c35b267d7fd00481698f10af9&amp;oe=5A346742" alt="" style="max-width: 354px !important;">
+              </div>
+            </div>
+            <div class="second_feature_text">
+              <h1>Track your time with due dates.</h1>
+              <div class="feature_info sub_text">Tasks are updated in real-time throughout the system, so your team can import their hours worked on individual tasks in one simple click. Timesheets can be submitted to managers for approval with automatic email alerts. No need to keep using two systems to manage your team’s time. Get task management, project management and timesheets in one.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="feature_section" id="texts">
+        <div class="feature_container">
+          <div class="first_feature_text">
+            <h1>Real time dashbord for accurate details.</h1>
+            <div class="feature_info sub_text">Real-time dashboards instantly show the status of all your current projects. Track costs and team progress across all your projects. Create one-click reports to track data on your projects, tasks and teams to print or share online in your next meeting. Say goodbye to time consuming reporting. Get real-time business intelligence anywhere, anytime.
+            </div>
+          </div>
+          <div class="first_feature_img">
+            <div>
+              <img class="first_img" src="https://scontent.fbom14-1.fna.fbcdn.net/v/t39.2365-6/11057186_808627832564368_562834945_n.png?oh=64d0de4c35b267d7fd00481698f10af9&amp;oe=5A346742" alt="" style="max-width: 354px !important;">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      </div>
+    </div>
+
+    <div class="footer">
+      <div class="footer_container">
+        <div class="footer_text">
+          <span class="copyright">© Manage 2017. </span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+    <script type="text/javascript" src="script.js"></script>
+  </body>
+</html>

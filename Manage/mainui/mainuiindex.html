@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Manage</title>
+    <link rel="stylesheet" href="../mainui/mainuistyle.css">
+    <!--font-style-->
+    <link href='https://fonts.googleapis.com/css?family=Quattrocento Sans' rel='stylesheet'>
+    <!--google icons-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <!--Firebase connection-->
+    <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase-database.js"></script>
+  </head>
+  <body>
+    <div id="client_ui" class="container-fluid sidebar_theme_defalut flex_pane_showing details_showing">
+      <div class="client_container">
+        <!--left side-->
+        <div class="client_channels_list_container">
+          <!---upper side-->
+          <div id="team_menu">
+            <div class="team_name_container top_margin">
+              <button id="button_expand_details"class="ts_icon team_name_caret btn_unstyle material-icons"type="button" name="button">expand_more</button>
+              <span id="team_name" class="overflow_ellipsis">project name</span>
+            </div>
+            <div id="team_menu_user">
+              <div id="presence_container" class="no_wrap ts_tip ts_tip_bottom ts_tip_left">
+                <i id="presence" class="ts_icon ts_icon_presence active" style="opacity=0.98"></i>
+              </div>
+              <span id="team_menu_user_details">
+                <span id="team_menu_user_name" class="overflow_ellipsis current_user_name">gnasherx</span>
+              </span>
+            </div>
+          </div>
+          <!--lower side-->
+          <div id="col_channels" class="channels_list_holder no_unread_msgs_badged default_sort">
+            <div id="col_channels_react_root" class="display_flex flex_direction_column flex_one">
+              <nav class="p-channel_sidebar">
+                <div class="p-channel_sidebar_list" style="position:relative">
+                  <div style="overflow:visible; height:0px;width:0;">
+                    <div class="c-scrollbar c-scrollbar--hidden" style="width:220px;height:848px;">
+                      <div class="c-scrollbar__hider">
+                        <div class="c-scrollbar__child" style="width:220px;">
+                          <div class="p-channel_sidebar_static_list">
+
+                            <div style="height:12px;"></div>
+                            <!--sidebar content will go here-->
+
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+
+                </div>
+                <button type="button" class="p-channel_sidebar_quickswitcher" name="button">
+                <span>Something new</span>
+                </button>
+
+              </nav>
+            </div>
+          </div>
+        </div>
+
+        <!--right side-->
+        <div class="client_main_container">
+
+        </div>
+
+      </div>
+    </div>
+    <script type="text/javascript" src="mainuiscript.js"></script>
+  </body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Manage</title>
+    <!--font-style-->
+    <link href='https://fonts.googleapis.com/css?family=Quattrocento Sans' rel='stylesheet'>
+    <!--jquery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!--google icons-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <!--Firebase connection-->
+    <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase-database.js"></script>
+    <link rel="stylesheet" href="appstyle.css">
+  </head>
+  <body>
+
+    <!--top nav bar-->
+    <div class="topbar">
+      <div class="global-nav">
+        <div class="global-nav-inner">
+          <div class="container">
+            <!--right sided of navbar-->
+            <div class="pull-right nav-extras">
+              <ul class="nav right-actions">
+                <li class="me session dropdown open" id="user-dropdown">
+                  <a href="#" class="btn settings dropdown-toogle" id="user-dropdown-toggle">
+                  <img src="../images/avatar.png" class="avatar">
+                  </a>
+                    <!--open dropdown menu-->
+                 <div id="userinfo-Dropdown" class="DashUserDropdown dropdown-menu dropdown-menu--rightAlign is-forceRight is-autoCentered">
+                    <div class="dropdown-caret">
+                      <span class="caret-outer"></span>
+                      <span class="caret-inner"></span>
+                    </div>
+                    <ul role="menu" >
+                      <li class="DashUserDropdown-userInfo">
+                        <a href="#" class="DashUserDropdown-userInfoLink"></a>
+                        <b class="fullname">Ganesh Pawar</b>
+                        <p class="name"><span class="username">@gnasherx</span></p>
+                      </li>
+                      <li class="dropdown-divider"></li>
+                      <li class="current-user">
+                        <a href="#" class="js-nav"><span class="DashUserDropdown-linkIcon">Profile</span></a>
+                      </li>
+                      <li class="js-signout-button" id="signout-button">
+                        <button id="log_out" type="button" class="dropdown-link" name="button">Log out</button>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+                <li class="topbar-go-to-project-btn">
+                  <button type="button" id="global-new-go-to-project-button"
+                  class="edgeButton-primary edgebutton" name="button">
+                  <span id="recent_project_name" class="text-go-to-project"><!--recent project name--></span>
+                  <i class="go_to_project align_middle material-icons">arrow_forward</i>
+                  </button>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--main project input-->
+    <div id="page">
+      <div id="page-content">
+        <form class="card align_center span_4_of_6 col_form float_none margin_auto large_bottom_margin large_bottom_padding large_right_padding large_left_padding">
+					<h1>Create new project</h1>
+          	<div class="col_input span_4_of_6 float_none margin_auto">
+    					<p class="p_input enter_project_name_text">Enter your project name.</p>
+            		<p class=" no_bottom_margin domain_input">
+          			<input type="text" name="domain" id="project_name"  class="input_inline align_right small_right_margin" placeholder="your-project-name" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+                </p>
+            		<p class="p_button large_bottom_margin">
+                <button type="submit" id="submit_project_name" class="btn btn_large small_top_margin full_width ladda-button" data-style="expand-right">
+                  <span class="ladda-label">Continue <i class="ts_icon ts_icon_arrow_large_right small_left_margin align_middle material-icons">arrow_forward</i></span>
+                </button>
+              </p>
+      			</div>
+        </form>
+
+        <!--show databsae-->
+       <div class="align_center">
+         <p class="p_already_have_project small_bottom_margin">You’ve this beautiful projects too:</p>
+         <p id="project-list-name" class="col span_4_of_6 margin_auto float_none">
+       </div>
+      </div>
+    </div>
+
+
+
+
+    <script type="text/javascript" src="app.js"></script>
+  </body>
+</html>

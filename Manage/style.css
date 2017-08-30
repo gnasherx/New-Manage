@@ -1,0 +1,511 @@
+body{
+  background: #fff;
+  display: block;
+  padding: 0;
+  margin: 0;
+  font-family: 'Quattrocento Sans';
+  font-size: 22px;
+}
+div{
+  display: block;
+}
+
+/*navigation*/
+nav.top{
+  position: absolute;
+  top: 30px;
+}
+
+nav.top{
+  width: 100%;
+  height: 55px;
+  z-index: 99;
+}
+nav.top ul{
+  list-style-type: none;
+  margin: 0 200px 0 0;
+  padding: 0;
+  float: right;
+  line-height: 55px;
+}
+nav.top ul li{
+  display: inline-block;
+}
+.main_whole_page nav ul a{
+  color: #253039;
+}
+nav.top ul a{
+  text-decoration: none;
+  display: inline-block;
+  font-size: 18px;
+  font-weight: 500;
+  margin-left: 9px;
+  position: relative;
+  line-height: 1em;
+  padding: 8px 7px 9px;
+}
+nav.top ul a:hover{
+  color: #6d8f91;
+  cursor: pointer;
+}
+
+
+/*signup div*/
+.main_whole_page{
+  background: #fff;
+  padding-top: 80px;
+}
+.main_whole_page .signup_container{
+  overflow: hidden;
+  padding: 0 0 40px 0;
+}
+.main_whole_page .signup_layout{
+  display: table;
+  height: 640px;
+  line-height: normal;
+  margin: 0 auto;
+}
+/*css for signup and signup*/
+.main_whole_page .main_app_inputs, .main_whole_page .main_app_inputs_signin{
+  display: table-cell;
+  padding-right: 80px;
+  vertical-align: middle;
+  width: 320px;
+}
+
+.app_logo_div{
+  height: 90px;
+  min-width: 100%;
+  width: 90px;
+}
+.app_logo_div .logo_img{
+  margin-left: auto;
+  margin-right: auto;
+  width: 90px;
+  line-height: 0;
+  padding-left: 115px;
+  padding-right: 100px;
+  pointer-events: none;
+}
+.main_app_inputs .app_logo_div .logo_img{
+  height: 90px !important;
+}
+.main_whole_page .app_name{
+  color: rgba(0, 0, 0, .88);
+  font-size: 36px;
+  font-weight: 400;
+  text-align: center;
+}
+.main_whole_page .sigup_with_manage{
+  color: rgba(0, 0, 0, .75);
+  font-size: 17px;
+  font-weight: 400;
+  margin-bottom: 4px;
+  margin-top: 12px;
+  text-align: center;
+  width: 320px;
+}
+/*sign up username email password top margin*/
+.main_whole_page .signup_email_pass{
+  margin-top: 24px;
+}
+/*signin email pass top margin*/
+.main_whole_page .signin_email_pass{
+  margin-top: 0px;
+}
+.main_whole_page .signup_layout .add_email_pass_username{
+  margin-bottom: 10px;
+}
+.main_whole_page .add_email_pass_username{
+  border: 1px solid rgba(0, 0, 0, .20);
+  border-radius: 4px;
+  color: rgba(0, 0, 0, 1);
+  display: block;
+  font-size: 17px;
+  height: 42px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 16px;
+  width: 286px;
+}
+.main_whole_page  .add_email_pass_username:focus{
+  outline: none;
+  border: 1px solid rgb(109,153,155);
+}
+.main_whole_page .main_app_inputs .signup_container{
+  font-weight: 500;
+}
+
+
+.main_whole_page .signup_container .signup_button{
+  background-color: #77AAAD;
+  background-image: none;
+  border: 1px solid #77AAAD;
+  border-radius: 4px;
+  color: #fff;
+  display: block;
+  font-family:'Quattrocento Sans';
+  font-size: 17px;
+  font-weight: 400;
+  height: 44px;
+  margin-bottom: 24px;
+  padding: 0;
+  width: 318px;
+  cursor: pointer;
+  align-items: none;
+  white-space: nowrap;
+  line-height: 26px;
+}
+button{
+  margin: 0;
+}
+.main_whole_page .signup_container .signup_button:hover{
+  background-color: #6d999b;
+  border-color: #6d999b;
+  color: #fff;
+}
+.main_whole_page .signup_layout .keep_me_signin_div{
+  margin-bottom: 12px;
+  margin-top: 0;
+}
+
+.main_whole_page .keep_me_signin_div{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 40px;
+  width: 320px;
+}
+.keep_me_signin_div .keep_me_signin_text{
+  text-align: center;
+}
+.keep_me_signin_text{
+  position: relative;
+}
+.clearfix{
+  zoom:1;
+}
+.keep_me_signin_div .keep_me_sign_text_input{
+  height: 16px;
+  top: 1px;
+  width: 16px;
+}
+.keep_me_sign_text_input{
+  margin: 0;
+  padding: 0;
+  position: absolute;
+}
+label{
+  cursor: pointer;
+  color: #666;
+  font-weight: bold;
+  vertical-align: middle;
+}
+
+.main_whole_page .signup_layout .alredy_signin_div{
+  margin-bottom: 48px;
+  margin-top: 0;
+}
+
+.main_whole_page .alredy_signin_div{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 320px;
+}
+.main_whole_page .already_signin_div .already_sign_text{
+  text-align: center;
+  vertical-align: baseline;
+}
+.already_signin_label{
+  font-size: 16px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 18px;
+  margin: 0;
+  padding: 0;
+}
+.main_whole_page .already_signin_div .already_sign_text a{
+  color: #6d999b;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 18px;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+.main_whole_page .already_signin_div .already_sign_text a:hover{
+  color: #6d8f91;
+}
+
+/*place holder text color*/
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #cacaca;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  color: #cacaca;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  color: #cacaca;
+}
+:-moz-placeholder { /* Firefox 18- */
+  color: #cacaca;
+}
+
+.main_whole_page .main_app_image{
+  display: table-cell;
+  position: relative;
+  text-align: right;
+  vertical-align: middle;
+}
+.main_app_image{
+  display: table-cell;
+  position: relative;
+  text-align: right;
+  vertical-align: middle;
+}
+.main_app_image .img{
+  max-width: 944px;
+  width: 944px;
+  display: block;
+  line-height: 0;
+  pointer-events: none;
+  height: auto !important;
+}
+img{
+  border: 0;
+}
+.main_whole_page .signup_container .keep_me_signin_div{
+      color: rgba(0, 0, 0, .60);
+}
+.main_whole_page .signup_container .keep_me_signin_div .keep_me_signin_text .uiInputLabelLabel{
+  margin-left: 28px;
+}
+.uiInputLabelLabel{
+  font-size: 14px;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 18px;
+    margin: 0;
+    padding: 0;
+}
+.keep_me_signin_div .keep_me_sign_text_input{
+  vertical-align: baseline;
+}
+
+/*section introduction*/
+.ui_section.ui_introduction{
+  padding-top: 0;
+}
+.ui_section{
+  border-bottom: 0;
+  overflow: hidden;
+  padding: 0 30px;
+  position: relative;
+}
+.ui_introduction{
+  background-color: #77AAAD;
+}
+.intro_container{
+  display: table;
+  margin: 0 auto;
+  position: relative;
+}
+.intro_container, .intro_div{
+  display: table;
+  width: 100%;
+}
+
+.intro_div > .intro_image:first-child{
+  display: table-cell;
+  text-align: left;
+}
+.intro_div > .intro_image:first-child .img{
+  margin: 0 auto;
+  pointer-events: none;
+}
+.img{
+  border: 0;
+}
+.intro_text{
+  display: table-cell;
+  vertical-align: middle;
+  width: 320px;
+  min-width: 320px;
+  max-width: 320px;
+  text-align: center;
+  padding-left: 20px;
+}
+.white{
+  color: #fff !important;
+}
+.ui_section .intro_container .intro_div  .intro_manage_white_text{
+  font-size: 38px;
+  font-family:'Quattrocento Sans';
+  line-height: 44px;
+  font-weight: 100;
+  margin: 0 0 10px;
+  display: block;
+}
+.intro_manage_white_subtext{
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 24px;
+  margin: 0 0 10px;
+  padding: 0;
+  color: #ebf8f9;
+}
+.featureslink{
+  display: inline-block;
+  height: 32px;
+  line-height: 32px;
+  border: 0;
+  border-radius: 3px;
+  font-size: 16px;
+  text-decoration: none;
+  padding: 0 24px;
+  font-weight: 500;
+  color: #fff;
+}
+
+/*feature section*/
+.feature_section_container.sayanything{
+  padding-bottom: 100px;
+  background-color: #fff;
+  background-size: 980px auto;
+  background-position: bottom center;
+  border-bottom: 0;
+}
+.feature_section_container{
+  overflow: hidden;
+  padding: 100px 0 0;
+  position: relative;
+}
+.section_container{
+  margin: 0 auto;
+  position: relative;
+}
+
+/*center text*/
+.text_center{
+  text-align: center;
+  max-width: 800px;
+  padding-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.feature_center_text{
+  color: rgba(0,0,0,0.75);
+  font-size: 38px;
+  line-height: 44px;
+  font-weight: 100;
+  margin: 0 0 10px;
+}
+
+/*features*/
+
+.feature_section#texts{
+  background-color: #fff;
+}
+.feature_div_shadow{
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.5), 0 1px 3px 0 rgba(0, 0, 0, 0.5);
+
+}
+.feature_section{
+  overflow: hidden;
+  padding:80px 30px 80px 30px;
+  position: relative;
+}
+
+.feature_container{
+  display: table;
+  margin:0 auto;
+  position: relative;
+}
+.first_feature_text{
+  display: table-cell;
+  vertical-align: middle;
+  width: 400px;
+  min-width: 400px;
+  max-width: 400px;
+  padding-right: 100px;
+}
+/*h1 from signup page manage bottom margin*/
+h1{
+  color: rgba(0,0,0,0.75);
+  font-size: 38px;
+  padding-bottom: 20px;
+  line-height: 44px;
+  font-weight: 100;
+  margin: 0 0 10px;
+  text-align: center;
+}
+/*manage name in signin bottom margin*/
+.app_name_signin{
+  margin:0px;
+}
+.sub_text{
+  font-weight: 400;
+}
+.feature_info .sub_text{
+  color: rgba(0,0,0,,0.55);
+  font-size: 17px;
+  line-height: 24px;
+  margin:0 0 10px;
+}
+.first_feature_text + .first_feature_img{
+  display: table-cell;
+  text-align: right;
+  padding-left: 100px;
+}
+.first_feature_text + .first_feature_img .img{
+  float: right;
+  width: 100% !important;
+  height: auto !important;
+  pointer-events: none;
+}
+first_img{
+  border: 0;
+}
+/*second feature*/
+.feature_container .second_feature_img{
+  height: 488px;
+  min-width: 320px;
+  padding-right:140px;
+}
+.second_feature_img .second_img{
+  float: left;
+  width: 100% !important;
+  height: auto !important;
+  pointer-events: none;
+  border: 0;
+}
+.second_feature_img + .second_feature_text{
+  display: table-cell;
+  width: 400px;
+  vertical-align: middle;
+  padding-left: 50px;
+}
+
+/*footer*/
+.footer{
+  background-color: #323940;
+  overflow: hidden;
+  padding: 20px 30px;
+}
+.footer .footer_container{
+  display: block;
+  text-align: center;
+}
+.footer_container{
+  margin-left: 0 auto;
+  position: relative;
+}
+.footer_text{
+  color: rgba(255, 255, 255, .6);
+  font-size: 16px;
+  letter-spacing: .2px;
+  line-height: 22px;
+  margin: 0;
+}

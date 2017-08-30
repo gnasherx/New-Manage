@@ -1,0 +1,214 @@
+html{
+  height:100%;
+}
+body{
+  height: 100%;
+  min-width:768px;
+  line-height: 1rem;
+  background-color:#fff;
+  color: #555459;
+  padding:0;
+  overflow-y:hidden;
+  overflow-x: hidden;
+  user-select: none;
+  margin:0;
+  display: block;
+  box-sizing: border-box;
+  font-family: 'Quattrocento Sans';
+}
+#client_ui{
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  height: 100%;
+}
+.container-fluid{
+  padding-right: 0;
+  padding-left: 0;
+}
+.client_container{
+  display: flex;
+  flex-grow: 1;
+  overflow:hidden;
+}
+/*left sidebar*/
+.client_channels_list_container{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex-basis: 220px;
+  flex-shrink: 0;
+  max-width: 1px;
+  max-width: 260px;
+  background: #2b90d9;
+  z-index: 201;
+  border-right: 1px solid #2b90d9;
+  box-sizing: content-box;
+  visibility: visible;
+}
+#team_menu{
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 0 1rem;
+  color: #fff;
+  border-bottom: 1px solid #1f79ba;
+  position: relative;
+  z-index: 50;
+  flex-basis: 61px;
+  flex-shrink: 0;
+}
+
+#team_menu .team_name_container{
+  display: flex;
+  margin-bottom: -2px;
+  margin-top: .5625rem!important;
+  line-height: 1.075rem
+}
+#team_menu>*{
+  opacity: 1;
+  transition: opacity .2s ease 0s;
+}
+
+#team_menu .team_name_caret{
+  order: 1;
+  outline: 0;
+  color: #cfcece;
+}
+.btn_unstyle{
+  background: 0;
+  border: none;
+  padding: 0;
+  font-size: inherit;
+  font-weight: inherit;
+}
+button{
+  margin:0;
+  display: inline-block;
+  font-size: 13.33px;
+  vertical-align: middle;
+}
+#team_menu #team_name{
+  font-size: 18px;
+  line-height: 1.375rem;
+  max-width: 9.12rem;
+  font-weight: 500;
+}
+.overflow_ellipsis{
+  display: block;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;;
+}
+#team_menu_user{
+  position: relative;
+  margin-top: 2px;
+  color: #fff;
+  font-size: .875rem;
+  font-weight: 400;
+  line-height: 1.5;
+  z-index: 1;
+}
+#presence_container{
+  float: left;
+  margin-left: -5px;
+  margin-right: 1px;
+  width: 20px;
+  height: 1.3125rem;
+  text-align: center;
+}
+.no_wrap{
+  white-space: nowrap;
+}
+.ts_tip{
+  display: inline-block;
+  position: relative;
+  z-index: 1;
+}
+#presence{
+  display: inline-block;
+  position: relative;
+  width: 9px;
+  height: 9px;
+}
+#team_menu_user_details{
+  display: flex;
+}
+#team_menu_user_details #team_menu_user_name{
+  flex: 0 1 auto;
+}
+ #team_menu .team_name_caret:hover{
+  font-weight: 500;
+  color: #fff;
+}
+#team_menu:hover{
+  background:#1e81c9;
+}
+.overflow_ellipsis{
+  display: block;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+/*lower side*/
+#col_channels{
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  color: #AB9BA9;
+  width: 220px;
+  float: left;
+  position: relative;
+  flex-grow: 1
+}
+.flex_one{
+  flex:1;
+}
+.flex_direction_column{
+  flex-direction: column;
+}
+.display_flex{
+  display: flex;
+}
+.p-channel_sidebar{
+  background: #2b90d9;
+  color: rgb(184,176,183);
+  width: 220px;
+  flex: 1;
+  position: relative;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+.p-channel_sidebar_list{
+  flex: 1;
+}
+
+.p-channel_sidebar_quickswitcher{
+  background: none;
+  border: 0;
+  color: inherit;
+  line-height: normal;
+  overflow: visible;
+  padding: 0;
+  height: 4rem;
+  opacity: 1;
+  transition: color 0.1s ease-out
+}
+.c-scrollbar{
+  position: relative;
+  overflow: hidden;
+}
+.c-scrollbar__hider{
+  overflow-y:scroll;
+  overflow-x: hidden;
+  outline: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: -20px;
+  bottom: 0;
+}
+.p-channel_sidebar_static_list{
+  outline: none;
+}
