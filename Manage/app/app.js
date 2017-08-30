@@ -70,6 +70,7 @@ document.getElementById('recent_project_name').addEventListener('click',function
 
       /*Add recent project name to user details*/
       userRef.child('recentproject').set({
+        projectname:projectname,
         projectkey:newProjectKey
       });
 
@@ -125,11 +126,12 @@ document.getElementById('recent_project_name').addEventListener('click',function
     projectref.child(yourRecentProjectName).once('value', function(snapshot){
       recentProjectKey = snapshot.val().projectkey;
         /*Add recent project name to user details*/
-      userRef.child('recentproject').set({
+        userRef.child('recentproject').set({
+        projectname:yourRecentProjectName,
         projectkey:recentProjectKey
       });
       /*top recenet project name for easy acces*/
-      document.getElementById('recent_project_name').innerText=yourRecentProjectName;
+     document.getElementById('recent_project_name').innerText=yourRecentProjectName;
 
     });
 

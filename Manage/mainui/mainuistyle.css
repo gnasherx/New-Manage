@@ -49,6 +49,7 @@ body{
 #team_menu{
   cursor: pointer;
   font-size: 1rem;
+  background: #2660A4;
   font-weight: 700;
   padding: 0 1rem;
   color: #fff;
@@ -58,7 +59,9 @@ body{
   flex-basis: 61px;
   flex-shrink: 0;
 }
-
+#team_menu:hover{
+  background:#235896;
+}
 #team_menu .team_name_container{
   display: flex;
   margin-bottom: -2px;
@@ -141,9 +144,7 @@ button{
   font-weight: 500;
   color: #fff;
 }
-#team_menu:hover{
-  background:#1e81c9;
-}
+
 .overflow_ellipsis{
   display: block;
   text-overflow: ellipsis;
@@ -171,7 +172,7 @@ button{
   display: flex;
 }
 .p-channel_sidebar{
-  background: #2b90d9;
+  background: #2660A4;
   color: rgb(184,176,183);
   width: 220px;
   flex: 1;
@@ -212,3 +213,124 @@ button{
 .p-channel_sidebar_static_list{
   outline: none;
 }
+/*Home*/
+.p-channel_sidebar__link{
+  color:#fff;
+  display: flex;
+  align-items: center;
+  height: 26px;
+  line-height: 26px;
+  padding: 0 0.75rem 0 15px;
+  width: 100%;
+  background: none;
+  border: 0;
+  font-size: 18px;
+  overflow-y: visible;
+}
+button{
+  margin:0;
+  vertical-align: middle;
+}
+.p-channel_sidebar__name{
+  margin-right: auto;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  opacity: 1;
+}
+.p-channel_sidebar__link:hover{
+  background: #235896;
+}
+.p-channel_sidebar__link:focus{
+  outline: none;
+
+}
+/*task*/
+.p-channel_sidebar__section_heading{
+  padding: 0 0.75rem 0 15px;
+  margin: 0;
+  width: 100%;
+  height: 26px;
+  display: flex;
+  align-items: center;
+}
+.p-channel_sidebar__section_heading_label{
+  background: none;
+  border: 0;
+  color: #D0D0D0;
+  font-size: 17px;
+  overflow: visible;
+  padding: 0;
+  font-weight: 500;
+  line-height: 1;
+  display: block;
+  opacity: 1;
+  text-align: left;
+  width: 100%;
+  transition: color 0.1 ease-out;
+}
+.p-channel_sidebar__section_heading_label:hover{
+  color: #fff;
+  cursor: pointer;
+}
+.p-channel_sidebar__section_heading_label:focus{
+  outline: none;
+}
+.p-channel_sidebar__section_heading_right{
+  margin-left: auto;
+}
+.p-channel_sidebar__section_heading_plus{
+  background: none;
+  border: 0;
+  color: #D0D0D0;
+  overflow: visible;
+  padding: 0 30px 0 0 ;
+  line-height: 100%;
+}
+.p-channel_sidebar__section_heading_plus:hover{
+  color: #fff;
+  cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*****************/

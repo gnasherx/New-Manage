@@ -10,13 +10,14 @@ var config = {
  firebase.initializeApp(config);
  const database=firebase.database();
  var currentuser;
- var projectref;
+ var projectref,userRef;
  var recentprojectname;
  firebase.auth().onAuthStateChanged(function(user) {
    if (user) {
    currentuser=user.uid;
    console.log(currentuser);
    projectref=database.ref('projects').child(currentuser);
+   userRef=database.ref('users').child(currentuser);
    recentProjectName();
    }
  });
@@ -24,9 +25,9 @@ var config = {
   function recentProjectName(){
     /*right now only showing recent new project added to firebase*/
     // TODO: change the recent project name which user doing right now.
-    projectref.orderByChild('startdate').on('child_added', function(snapshot){
-     var recentProject = snapshot.val().name;
-     document.getElementById('team_name').innerText=recentProject;
+    userRef.child('recentproject').once('value', function(snapshot){
+     var recentProjectName = snapshot.val().projectname;
+     document.getElementById('team_name').innerText=recentProjectName;
     });
     return true;
   }
