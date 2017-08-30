@@ -21,6 +21,26 @@ var config = {
    recentProjectName();
    }
  });
+$(document).ready(function(){
+  $('#fs_modal').hide();
+
+  $('#add_task').click(function(){
+      $('#fs_modal').show();
+      $('#client_ui').hide();
+  });
+
+  $('#cancel_task').click(function(){
+      $('#fs_modal').hide();
+      $('#client_ui').show();
+  });
+
+  $('#fs_modal_close_btn').click(function(){
+      $('#fs_modal').hide();
+      $('#client_ui').show();
+  });
+
+});
+
 
   function recentProjectName(){
     /*right now only showing recent new project added to firebase*/
