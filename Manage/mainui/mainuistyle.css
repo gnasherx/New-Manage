@@ -377,7 +377,7 @@ a{
   align-items:flex-start;
   padding: 15vh 2rem 2rem;
 }
-#fs_modal .contents_container .contents{
+#fs_modal .contents_container #contents{
   width: 640px;
   max-width: 100%;
   padding-bottom: 2rem;
@@ -466,10 +466,9 @@ input[type=text]:focus{
   text-transform: lowercase;
 }
 .modal_input_note{
-  font-size: .8rem;
+  font-size: 16px;
   color: #717274;
   display: block;
-  line-height: 1rem;
   margin-top: .25rem;
 }
 .margin_auto{
@@ -525,7 +524,7 @@ input[type=text]:focus{
 .btn_outline{
   background: #FBFBFA;
   color: #555459;
-  border: 1px solid #E7E7E7;
+  border: 1px solid #E0E1D6;
   font-weight: 500;
   text-shadow: none;
 }
@@ -533,17 +532,33 @@ input[type=text]:focus{
   margin-right: .5rem;
 }
 .btn_outline:hover{
+  cursor: pointer;
   outline: none;
-  background: #E7E7E7;
-  border: 1px solid #F6F7EB;
+  background: #E0E1D6;
+  border: 1px solid #E0E1D6;
+}
+.new_channel_go:hover{
+  background-color: #4F6D5F;
+  color: #fff;
+  cursor: pointer;
 }
 .btn_outline:focus{
   outline: none;
-  border: 1px solid #F6F7EB;
+  border: 1px solid #E0E1D6;
 }
 
-
-
+/*task container*/
+.task_container{
+  color:#fff;
+  display: block;
+  align-items: center;
+  padding: 4px 0.75rem 0 15px;
+  width: 100%;
+  background: none;
+  border: 0;
+  font-size: 16px;
+  overflow-y: visible;
+}
 
 
 
