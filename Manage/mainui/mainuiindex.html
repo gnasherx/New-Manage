@@ -1,154 +1,346 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Manage</title>
-    <link rel="stylesheet" href="../mainui/mainuistyle.css">
-    <!--font-style-->
-    <link href='https://fonts.googleapis.com/css?family=Quattrocento Sans' rel='stylesheet'>
-    <!--jquery-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <!--google icons-->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <!--Firebase connection-->
-    <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase-database.js"></script>
-  </head>
-  <body>
-    <div id="client_ui" class="container-fluid sidebar_theme_defalut flex_pane_showing details_showing">
-      <div class="client_container">
-        <!--left side-->
-        <div class="client_channels_list_container">
-          <!---upper side-->
-          <div id="team_menu">
-            <div class="team_name_container top_margin">
-              <button id="button_expand_details"class="ts_icon team_name_caret btn_unstyle material-icons"type="button" name="button">expand_more</button>
-              <span id="team_name" class="overflow_ellipsis">project name</span>
-            </div>
-            <div id="team_menu_user">
-              <div id="presence_container" class="no_wrap ts_tip ts_tip_bottom ts_tip_left">
-                <i id="presence" class="ts_icon ts_icon_presence active" style="opacity=0.98"></i>
-              </div>
-              <span id="team_menu_user_details">
-                <span id="team_menu_user_name" class="overflow_ellipsis current_user_name">username</span>
-              </span>
-            </div>
-          </div>
-          <!--lower side-->
-          <div id="col_channels" class="channels_list_holder no_unread_msgs_badged default_sort">
-            <div id="col_channels_react_root" class="display_flex flex_direction_column flex_one">
-              <nav class="p-channel_sidebar">
-                <div class="p-channel_sidebar_list" style="position:relative">
-                  <div style="overflow:visible; height:0px;width:0;">
-                    <div class="c-scrollbar c-scrollbar--hidden" style="width:220px;height:848px;">
-                      <div class="c-scrollbar__hider">
-                        <div class="c-scrollbar__child" style="width:220px;">
-                          <div class="p-channel_sidebar_static_list">
 
-                            <div style="height:12px;"></div>
-                            <!--sidebar content will go here-->
-                            <!--home-->
-                            <div style="height: 26px;">
-                              <button type="button" class="p-channel_sidebar__link" aria-label="Browse everything">
+<head>
+  <meta charset="utf-8">
+  <title>Manage</title>
+  <link rel="stylesheet" href="../mainui/mainuistyle.css">
+  <link rel="stylesheet" href="../mainui/mainuisecondstyle.css">
+  <!--font-style-->
+  <link href='https://fonts.googleapis.com/css?family=Quattrocento Sans' rel='stylesheet'>
+  <!--jquery-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <!--google icons-->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+  <!--Firebase connection-->
+  <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase-database.js"></script>
+</head>
+
+<body>
+  <div id="client_ui" class="container-fluid sidebar_theme_defalut flex_pane_showing details_showing">
+    <div class="client_container">
+      <!--left side-->
+      <div class="client_channels_list_container">
+        <!---upper side-->
+        <div id="team_menu">
+          <div class="team_name_container top_margin">
+            <button id="button_expand_details" class="ts_icon team_name_caret btn_unstyle material-icons" type="button" name="button">expand_more</button>
+            <span id="team_name" class="overflow_ellipsis">project name</span>
+          </div>
+          <div id="team_menu_user">
+            <div id="presence_container" class="no_wrap ts_tip ts_tip_bottom ts_tip_left">
+              <i id="presence" class="ts_icon ts_icon_presence active" style="opacity=0.98"></i>
+            </div>
+            <span id="team_menu_user_details">
+                <span id="team_menu_user_name" class="overflow_ellipsis current_user_name">username</span>
+            </span>
+          </div>
+        </div>
+        <!--lower side-->
+        <div id="col_channels" class="channels_list_holder no_unread_msgs_badged default_sort">
+          <div id="col_channels_react_root" class="display_flex flex_direction_column flex_one">
+            <nav class="p-channel_sidebar">
+              <div class="p-channel_sidebar_list" style="position:relative">
+                <div style="overflow:visible; height:0px;width:0;">
+                  <div class="c-scrollbar c-scrollbar--hidden" style="width:220px;height:848px;">
+                    <div class="c-scrollbar__hider">
+                      <div class="c-scrollbar__child" style="width:220px;">
+                        <div class="p-channel_sidebar_static_list">
+
+                          <div style="height:12px;"></div>
+                          <!--sidebar content will go here-->
+                          <!--home-->
+                          <div style="height: 26px;">
+                            <button type="button" class="p-channel_sidebar__link" aria-label="Browse everything">
                                 <span class="p-channel_sidebar__name">Home</span><!-- react-empty: 15 -->
                               </button>
+                          </div>
+                          <div style="height: 18px;"></div>
+                          <!--task-->
+                          <div style="height: 26px;">
+                            <div class="p-channel_sidebar__section_heading" role="heading">
+                              <button class="p-channel_sidebar__section_heading_label p-channel_sidebar__section_heading_label--clickable">Tasks</button>
+                              <div class="p-channel_sidebar__section_heading_right">
+                                <button id="add_task" class="p-channel_sidebar__section_heading_plus material-icons" style="font-size:21px;">add_circle_outline</button>
+                              </div>
                             </div>
-                            <div style="height: 18px;"></div>
-                            <!--task-->
-                            <div style="height: 26px;">
-                              <div class="p-channel_sidebar__section_heading" role="heading">
-                                <button class="p-channel_sidebar__section_heading_label p-channel_sidebar__section_heading_label--clickable">Tasks</button>
-                                <div class="p-channel_sidebar__section_heading_right">
-                                  <button id="add_task"class="p-channel_sidebar__section_heading_plus material-icons" style="font-size:21px;">add_circle_outline</button>
+                          </div>
+
+                          <!--task list-->
+                          <div id="task_list" class="task_container">
+                            <!--task list will go here-->
+                          </div>
+
+
+                          <div style="height:12px;"></div>
+                          <div style="height: 26px;">
+                            <button id="invite_people" type="button" class="p-channel_sidebar__link p-channel_sidebar__link--invites" aria-label="Invite People">
+                              <span class="p-channel_sidebar__name">Invite People</span>
+                              <!-- react-empty: 92 -->
+                            </button>
+
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+
+              </div>
+              <button type="button" class="p-channel_sidebar_quickswitcher" name="button">
+                <span>Something new</span>
+                </button>
+
+            </nav>
+          </div>
+        </div>
+      </div>
+
+      <!--right side-->
+      <div class="client_main_container">
+        <header id="client_header">
+          <div class="channel_header">
+            <!-- <div class="messages_header">
+              <div class="channel_title">
+                <div id="channel_name_container" class="channel_name_container">
+                  <span id="channel_name" class="channel_name">
+                        <button type="button" name="button" id="im_title" class="btn_unstyle">taskname</button>
+                      </span>
+                </div>
+                <div id="channel_header_info" class="channel_header_info">
+                  <div id="star_container" class="channel_header_info_item">
+                    <button class="star ts_tip ts_icon btn_unstyle material-icons" style="font-size:15px;" type="button" name="button">star_border</button>
+                  </div>
+                  <div class="channel_header_info_item channel_header_member_status active">
+                    <span class="presence">
+                      <i class="ts_icon presence_icon material-icons">favorite_border</i>
+                    </span>
+                    <span id="header_status_message">active</span>
+                  </div>
+                </div>
+                <div class="channel_header_info">
+
+                </div>
+              </div>
+
+            </div>
+            <div class="flex_header">
+              <div id="search_container">
+                <form id="header_search_form" class="search_form no_bottom_margin">
+                  <div class="icon_search_wrapper">
+                    <i class="ts_icon_search icon_search material-icons" style="font-size:22px; color:#9D9E96;">search</i>
+                  </div>
+                  <div class="search_input_wrapper">
+                    <input type="text" id="search_tearms" class="search_input" placeholder="Search">
+                  </div>
+                </form>
+              </div>
+              <button id="star_toggle" class="channel_header_icon btn_unstyle ts_tip ts_tip_bottom" type="button" name="button">
+                <i class="material-icons" style="font-size:26px;">star_border</i>
+              </button>
+              <button id="flex_menu_toggle" class="channel_header_icon btn_unstyle ts_tip" type="button" name="button">
+                <i class="material-icons">more_vert</i>
+              </button>
+            </div> -->
+          </div>
+        </header>
+        <div id="client_body">
+          <div id="col_messages">
+            <div id="messages_container">
+              <div id="msgs_scroller_div" class="message_pane_scroller">
+                <!--all messages will go here.-->
+              </div>
+            </div>
+
+
+            <div>
+              <div aria-label="New message" class="_4rv3" role="region">
+                <div class="_5irm">
+                  <!--input-->
+                  <div class="_kmc navigationFocus" role="presentation">
+                    <div class="_3-8x _3oh-">
+                      <div tabindex="-1">
+                        <div class="_5rp7 _5rp8">
+                          <div class="_5rpb">
+                            <div id="type_a_message" autofocus="autofocus" aria-autocomplete="list" aria-controls="js_7" aria-describedby="placeholder-foura" aria-expanded="false" aria-label="Type a message..." class="notranslate _5rpu" contenteditable="true" role="combobox" spellcheck="true"
+                              tabindex="0" style="outline: none; white-space: pre-wrap; word-wrap: break-word;">
+                              <div data-contents="true">
+                                <div class="" data-block="true" data-editor="foura" data-offset-key="cs6t-0-0">
+                                  <div data-offset-key="cs6t-0-0" class="_1mf _1mj">
+                                    <span data-offset-key="cs6t-0-0">
+                                      <br data-text="true">
+                                    </span>
+                                  </div>
                                 </div>
                               </div>
                             </div>
-
-                            <!--task list-->
-                            <div id="task_list" class="task_container">
-
-                            </div>
-
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
-
-
                 </div>
-                <button type="button" class="p-channel_sidebar_quickswitcher" name="button">
-                <span>Something new</span>
-                </button>
-
-              </nav>
+              </div>
             </div>
+            <!--chat input ends here-->
+
           </div>
         </div>
-
-        <!--right side-->
-        <div class="client_main_container">
-
-        </div>
-
       </div>
     </div>
+  </div>
 
-    <!--New task dialog-->
-      <div id="fs_modal" role="dialog" class="active">
-    		<a id="fs_modal_close_btn" class="fs_modal_btn">
+  <!--New task dialog-->
+  <div id="fs_modal" role="dialog" class="active">
+    <a id="fs_modal_close_btn" class="fs_modal_btn">
     			<i class="ts_icon ts_icon_times material-icons" style="font-size:36px;">closed</i>
     			<span class="key_label">esc</span>
     		</a>
-      	<div class="contents_container">
-      		<div id="contents">
-            <div id="new_channel_modal_container">
-              <div id="new_channel_modal" class="channel_modal">
-              	<div>
-              		<h1 class="channel_modal_header">
+    <div class="contents_container">
+      <div id="contents">
+        <div id="new_channel_modal_container">
+          <div id="new_channel_modal" class="channel_modal">
+            <div>
+              <h1 class="channel_modal_header">
             			  <span class="public_channel_item">Create a task</span>
               		</h1>
-            			  <p class="input_note_special medium_bottom_margin">Divide your project into diiferent task and assign it to your team members. They’re best way to organized your project.</p>
-              	</div>
-              	<div>
-              		<div class="bottom_margin">
-              			<label for="channel_create_title" class="align_left">Name</label>
-              			<div class="channel_modal_title_input_container no_margin">
-              				<input id="channel_create_title" style="width:612px;" name="title_input" type="text" class="lowercase title_input large_left_padding validation_warning" placeholder="e.g. desgin">
-              			</div>
-              			<span class="modal_input_note margin_auto">
+              <p class="input_note_special medium_bottom_margin">Divide your project into diiferent task and assign it to your team members. They’re best way to organized your project.</p>
+            </div>
+            <div>
+              <div class="bottom_margin">
+                <label for="channel_create_title" class="align_left">Name</label>
+                <div class="channel_modal_title_input_container no_margin">
+                  <input id="channel_create_title" style="width:612px;" name="title_input" type="text" class="lowercase title_input large_left_padding validation_warning" placeholder="e.g. desgin">
+                </div>
+                <span class="modal_input_note margin_auto">
               				Task names must be lowercase, without spaces.
               			</span>
-              		</div>
-              		<div class="medium_bottom_margin">
-              			<label for="channel_purpose_input" class="block align_left">
+              </div>
+              <div class="medium_bottom_margin">
+                <label for="channel_purpose_input" class="block align_left">
               				Purpose
               				<span class="greigh normal">(optional)</span>
               			</label>
-              				<input id="channel_purpose_input" style="width:612px;" name="channel_purpose_input" type="text" maxlength="250" placeholder="">
-              			<span class="modal_input_note margin_auto">What’s this task about?</span>
-              		</div>
-              	</div>
-            	  <div class="new_channel_modal_footer">
-              		<button id="save_channel" class="btn btn_large new_channel_go ladda-button float_right" type="submit" data-style="expand-right" aria-disabled="true">
+                <input id="channel_purpose_input" style="width:612px;" name="channel_purpose_input" type="text" maxlength="250" placeholder="">
+                <span class="modal_input_note margin_auto">What’s this task about?</span>
+              </div>
+            </div>
+            <div class="new_channel_modal_footer">
+              <button id="save_channel" class="btn btn_large new_channel_go ladda-button float_right" type="submit" data-style="expand-right" aria-disabled="true">
                     <span class="ladda-label">Create task</span>
                     <span class="ladda-spinner"></span>
                   </button>
-              		<button id="cancel_task"type="reset" class="btn btn_large btn_outline float_right small_right_margin ladda-button new_channel_cancel_btn">
+              <button id="cancel_task" type="reset" class="btn btn_large btn_outline float_right small_right_margin ladda-button new_channel_cancel_btn">
                     <span class="ladda-label">Cancel</span>
                   </button>
-              	</div>
-
-              </div>
             </div>
+
           </div>
-      	</div>
+        </div>
       </div>
+    </div>
+  </div>
+
+  <!--invite people-->
+    <div id="fs_modal_invite" role="dialog" class="active">
+      <a id="fs_modal_close_btn_invite" class="fs_modal_btn">
+  			<i class="ts_icon ts_icon_times material-icons" style="font-size:36px;">closed</i>
+  			<span class="key_label">esc</span>
+  		</a>
+      <div class="contents_container">
+        <div class="contents">
+          <div id="admin_invites_container"  class="admin_invites_container">
+
+            <div id="admin_invites_alert" class="align_center alert">
+              <i class="ts_icon_add_user very_small_right_margin blue_fill material-icons" style="font-size:22px;">person_add</i>
+          		<p class="inline">
+          				Invite your team <span class="bold">members</span>.
+          		</p>
+          	</div> <!--admin_invites_alert-->
+
+            <h1 id="admin_invites_header" class="light align_center">
+          		<i class="ts_icon ts_icon_paper_plane blue_fill float_none small_right_margin material-icons">send</i>
+          		Invite <span class="admin_invites_header_type normal">Members</span>
+          	</h1>
+
+            <div id="admin_invites_workflow">
+              <div id="individual_invites">
+                <div id="individual_invites">
+
+                  <div id="invite_rows" style="height:80px;">
+                    <div id="invite_0" class="admin_invite_row clearfix">
+                      <div class="col span_1_of_2">
+                        <label class="email full_width">
+                          Email Address<br>
+                          <div class="full_width">
+                            <input id="invite_email" type="text" spellcheck="false" autocorrect="off" class="email_field small" name="email_address" placeholder="name@example.com" data-email-healing="true">
+                          </div>
+                        </label>
+                      </div>
+                      <div class="col span_1_of_2">
+                        <label class="email full_width">
+                          Full Name<br>
+                          <div class="full_width">
+                            <input id="invite_fullname" type="text" spellcheck="false" autocorrect="off" class="email_field small" name="email_address"  data-email-healing="true">
+                          </div>
+                        </label>
+                      </div>
+                    </div><!--invite_0-->
+                  </div><!--invite_row-->
 
 
 
-    <script type="text/javascript" src="mainuiscript.js"></script>
-  </body>
+          			<div id="admin_invites_channel_picker_container" class="no_bottom_margin">
+                  <div>
+                    <label>Default Project</label>
+                    <div class="greigh no_bottom_margin">
+                      <p id="default_channels_note" class="">
+                        New <strong>members</strong> will automatically join current <strong>project</strong>.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="invite_modal_options_container">
+                  <div class="admin_invites_guest_expiration_date_container">
+                    <div class="invite_modal_options large_bottom_margin">
+                      <div class="invite_modal_options_right">
+                        <button type="submit" id="admin_invites_submit_btn" class="btn btn_large ladda-button ladda" data-action="api_send_invites" data-style="expand-right">
+                          <span class="ladda-label" data-clog-click="true" data-clog-event="INVITEMODAL_ACTION" data-clog-params="action=invite,trigger=click_cta_submit_btn">Send Invitations</span>
+                          <span class="ladda-spinner"></span></button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div><!--individual_invites-->
+              </div><!--admin_invites_workflow-->
+
+            </div>  <!--admin_invites_container-->
+          </div> <!--contents-->
+        </div>  <!--contents_container-->
+      </div> <!--fs_modal-->
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+  <script type="text/javascript" src="mainuiscript.js"></script>
+</body>
+
 </html>

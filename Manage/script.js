@@ -1,13 +1,13 @@
 //firebase reference
 var config = {
-  apiKey: "AIzaSyAmKtlVr0v38VXyzO3YU-Fjo7A4zxJQL1k",
-  authDomain: "manage-1d80d.firebaseapp.com",
-  databaseURL: "https://manage-1d80d.firebaseio.com",
-  projectId: "manage-1d80d",
-  storageBucket: "",
-  messagingSenderId: "768654120261"
-};
-firebase.initializeApp(config);
+   apiKey: "AIzaSyANZrk_84aw8QHqcSotlVWE6Z3TzqvHM1I",
+   authDomain: "manage-5da1a.firebaseapp.com",
+   databaseURL: "https://manage-5da1a.firebaseio.com",
+   projectId: "manage-5da1a",
+   storageBucket: "manage-5da1a.appspot.com",
+   messagingSenderId: "938828366786"
+ };
+ firebase.initializeApp(config);
 
 $(document).ready(function(){
 
@@ -41,7 +41,7 @@ $(document).ready(function(){
     var signup_username = document.getElementById('signup_username').value;
     var signup_username = document.getElementById('signup_username').value;
 
-    createUser(signup_email,signup_username);
+
 
     window.location.href="app/app.html";
     }
@@ -66,6 +66,7 @@ $(document).ready(function(){
     console.log(signup_email);
     firebase.auth().createUserWithEmailAndPassword(signup_email, signup_password)
     .then(function(){
+        createUser(signup_email,signup_username);
     })
     .catch(function(error) {
     alert('SignupError:Error occured while adding your data into firebase!');

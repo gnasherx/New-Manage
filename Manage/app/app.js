@@ -1,11 +1,11 @@
- var config = {
-    apiKey: "AIzaSyAmKtlVr0v38VXyzO3YU-Fjo7A4zxJQL1k",
-    authDomain: "manage-1d80d.firebaseapp.com",
-    databaseURL: "https://manage-1d80d.firebaseio.com",
-    projectId: "manage-1d80d",
-    storageBucket: "manage-1d80d.appspot.com",
-    messagingSenderId: "768654120261"
-  };
+var config = {
+   apiKey: "AIzaSyANZrk_84aw8QHqcSotlVWE6Z3TzqvHM1I",
+   authDomain: "manage-5da1a.firebaseapp.com",
+   databaseURL: "https://manage-5da1a.firebaseio.com",
+   projectId: "manage-5da1a",
+   storageBucket: "manage-5da1a.appspot.com",
+   messagingSenderId: "938828366786"
+ };
 
   firebase.initializeApp(config);
   const database=firebase.database();

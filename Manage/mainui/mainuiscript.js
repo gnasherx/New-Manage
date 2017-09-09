@@ -1,13 +1,13 @@
 var config = {
-   apiKey: "AIzaSyAmKtlVr0v38VXyzO3YU-Fjo7A4zxJQL1k",
-   authDomain: "manage-1d80d.firebaseapp.com",
-   databaseURL: "https://manage-1d80d.firebaseio.com",
-   projectId: "manage-1d80d",
-   storageBucket: "manage-1d80d.appspot.com",
-   messagingSenderId: "768654120261"
+   apiKey: "AIzaSyANZrk_84aw8QHqcSotlVWE6Z3TzqvHM1I",
+   authDomain: "manage-5da1a.firebaseapp.com",
+   databaseURL: "https://manage-5da1a.firebaseio.com",
+   projectId: "manage-5da1a",
+   storageBucket: "manage-5da1a.appspot.com",
+   messagingSenderId: "938828366786"
  };
-
  firebase.initializeApp(config);
+
  const database=firebase.database();
  var currentuser;
  var projectref,userRef,taskRef;
@@ -16,6 +16,7 @@ var config = {
 
  $(document).ready(function(){
     $('#fs_modal').hide();
+    $('#fs_modal_invite').hide();
 
     $('#add_task').click(function(){
         $('#fs_modal').show();
@@ -29,6 +30,21 @@ var config = {
 
     $('#fs_modal_close_btn').click(function(){
         $('#fs_modal').hide();
+        $('#client_ui').show();
+    });
+
+    $('#invite_people').click(function(){
+        $('#fs_modal_invite').show();
+        $('#client_ui').hide();
+    });
+
+    $('#cancel_task').click(function(){
+        $('#fs_modal_invite').hide();
+        $('#client_ui').show();
+    });
+
+    $('#fs_modal_close_btn_invite').click(function(){
+        $('#fs_modal_invite').hide();
         $('#client_ui').show();
     });
 
@@ -91,7 +107,7 @@ var config = {
 
    function renderTask(tasknamevalue){
      var a=document.createElement('a');
-     a.style.color="#fff";
+     a.style.color="#D0D0D0";
      a.style.height="26px"
      a.style.fontWeight="500";
      a.style.lineHeight="1.2rem";
@@ -102,7 +118,23 @@ var config = {
      a.innerText=tasknamevalue;
      var tasklist=document.getElementById('task_list');
      tasklist.appendChild(a);
+
      return true;
    }
+
+  // send message
+  document.getElementById('type_a_message').addEventListener('keydown',function(e){
+    if(e.keyCode==13){
+        // var message=document.getElementById('type_a_message').value;
+        console.log('click');
+
+        var message = $(this).text();
+        console.log(message);
+        window.open('mailto:pawarg124@gmail.com');
+
+
+
+    }
+  });
 
 });
